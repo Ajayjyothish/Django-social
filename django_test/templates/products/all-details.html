@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+{% for instance in object_list %}
+    <p>{{forloop.counter}} -<a href="{{ instance.get_absolute_url }}" class='text-decoration-none'> {{instance.title}}</a></p>
+
+
+{% endfor %}
+<a class='btn btn-info' href="{% url 'books:form' %}">&plus; Add new book</a>
+
+{% endblock %}
+{% block active_books %}
+
+active
+
+{% endblock %}
+
+
+{% block head%}
+Books
+{% endblock%}

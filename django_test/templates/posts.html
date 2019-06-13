@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}Posts{% endblock %}
+
+
+
+{% block content %}
+<div class="mb-4">
+    <a href="{% url 'post-form' %}" class="btn btn-primary" role="button">Add Posts</a>
+  </div>
+{% include 'base_post.html' %}
+  
+
+{% endblock %}
+
+{% block active_posts %}
+active
+{% endblock %}

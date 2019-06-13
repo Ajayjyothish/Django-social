@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="post" novalidate> {% csrf_token %}  
+    {% include 'includes/form.html'%}
+    <input type="submit" class="btn btn-success" value="submit"/>
+</form>
+
+{% include 'base_post.html' %}
+
+{% include "footer.html" %}
+{% endblock %} 
+
+{% block head%}
+Form
+{% endblock%}
