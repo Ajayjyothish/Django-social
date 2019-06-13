@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <form method="post" class="mb-4" novalidate>
+    {% csrf_token %}
+    {% include 'includes/form.html' %}
+    <button type="submit" class="btn btn-success">Save changes</button>
+    <a href="{% url 'posts' %}" class="btn btn-outline-secondary" role="button">Cancel</a>
+  </form>
+{% endblock %}

@@ -18,8 +18,9 @@ from django.urls import path, include
 from django.conf.urls import url
 from django.contrib.auth import views
 from pages.views import home_view, contact_view
-from books.views import book_view , posts_view , post_form_view
+from books.views import book_view , posts_view , post_form_view , PostUpdateView
 from accounts.views import accounts_view
+from books import views as vs
 
 urlpatterns = [
 	path('', home_view, name='home'),
@@ -48,7 +49,8 @@ urlpatterns = [
 url(r'^settings/password/done/$', views.PasswordChangeDoneView.as_view(template_name='password_change_done.html'),
     name='password_change_done'),
 path("posts/",posts_view,name="posts"),
-path('posts/add',post_form_view,name='post-form')
+path('posts/add',post_form_view,name='post_form'),
+path('post/edit/<int:post_pk>', PostUpdateView.as_view(),name='post_edit')
 
 ]
 
